@@ -2,7 +2,6 @@
 
 module.exports = function(environment) {
   var ENV = {
-    shhh: process.env.SECRET_KEY,
     modulePrefix: 'ember-deploy-test',
     environment: environment,
     baseURL: '/',

@@ -19,13 +19,13 @@ module.exports = {
 
    production: {
     store: {
-      host: 'ec2-54-68-118-171.us-west-2.compute.amazonaws.com',
+      host: process.env.REDIS_PRODUCTION_HOST,
       port: 6379,
       password: ''
     },
     assets: {
-      accessKeyId: 'AKIAJ5S75LNIUAQNW4AA',
-      secretAccessKey: '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',
+      accessKeyId: process.env.AWS_ACCESS_KEY,
+      secretAccessKey: process.env.AWS_SECRET_KEY,
       bucket: 'boomshaka'
     }
   }
