@@ -1,8 +1,23 @@
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
+var env = EmberApp.env()|| 'development';
+
+var fingerprintOptions = {};
+
+switch (env) {
+  case 'development':
+    fingerprintOptions.prepend = 'http://localhost:4200/';
+  break;
+  case 'production':
+    fingerprintOptions.prepend = 'https://d7jzxs26r8l8w.cloudfront.net/';
+  break;
+}
+
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
+    fingerprint: fingerprintOptions,
+    
     dotEnv: {
       clientAllowedKeys: ['REDIS_PRODUCTION_HOST', 'AWS_ACCESS_KEY', 'AWS_SECRET_KEY']
     }
