@@ -16,11 +16,7 @@ switch (env) {
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    fingerprint: fingerprintOptions,
-    
-    dotEnv: {
-      clientAllowedKeys: ['REDIS_PRODUCTION_HOST', 'AWS_ACCESS_KEY', 'AWS_SECRET_KEY']
-    }
+    fingerprint: fingerprintOptions
   });
 
   // Use `app.import` to add additional libraries to the generated

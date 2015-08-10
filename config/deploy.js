@@ -1,3 +1,6 @@
+/* jshint node: true */
+require('dotenv').load();
+
 module.exports = {
   development: {
     buildEnv: 'development', // Override the environment passed to the ember asset build. Defaults to 'production'
@@ -11,9 +14,9 @@ module.exports = {
       gzip: false, // if undefined or set to true, files are gziped
       gzipExtensions: ['js', 'css', 'svg'], // if undefined, js, css & svg files are gziped
       exclude: ['.DS_Store', '*-test.js'], // defaults to empty array
-      accessKeyId: '<your-access-key-goes-here>',
-      secretAccessKey: process.env['AWS_ACCESS_KEY'],
-      bucket: '<your-bucket-name>'
+      accessKeyId: process.env.AWS_ACCESS_KEY,
+      secretAccessKey: process.env.AWS_SECRET_KEY,
+      bucket: 'boomshaka'
     }
   },
 
